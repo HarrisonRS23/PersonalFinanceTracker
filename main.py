@@ -24,6 +24,12 @@ class App(ctk.CTk):
     # Create a sidebar fram with widgets
 
     self.sidebar_frame = ctk.CTkFrame(self, width=140, corner_radius=0)
+    # Spans 4 rows in column 1, "nsew": Stretch in all directions to fill the entire cell.
+    self.sidebar_frame.grid(row=0,column=0,rowspan=4,sticky="nsew")
+    self.sidebar_frame.grid_rowconfigure(4, weight=1)
+    # Add text at top of sidebar
+    self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="Placeholder", font=ctk.CTkFont(size=20, weight="bold"))
+    self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
 
 if __name__ == "__main__":
